@@ -1,6 +1,10 @@
 <h1> <%= @task.title %> </h1>
 <p>Details - <%= @task.details%></p>
-<p>Completed? - <%= @task.completed%></p>
+<% if @task.completed %>
+  <p>Completed? - Yes</p>
+  <% else %>
+  <p>Completed? - No</p>
+<% end %>
 <%= link_to "Tasks", tasks_path, class:"btn btn-primary" %>
 <%= link_to "Edit task", edit_path(@task), class:"btn btn-danger" %>
 <%= link_to "Delete task", task_path(@task),
